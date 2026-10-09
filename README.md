@@ -17,11 +17,21 @@ outputs/
 reports/               Assignment report
 ```
 
-Model weights and the ACID images are not stored in Git. The notebook reads the dataset from Google Drive and saves training outputs there.
+The ACID images and trained checkpoints are kept outside Git. Dataset access and the shared checkpoint folder are documented below.
 
 ## Dataset
 
 The assignment dataset is the ACID three-class subset (Excavator, Dozer, and Dump Truck). Download it from the [ACID Google Drive link](https://drive.google.com/uc?id=1Qg_X5FygUMBRTcVFPb0s1fQP-20f8n8O) and extract it in your Google Drive. The notebook expects `3classes.json` and its images in `ACID_3classes/3classes/` beneath the Drive workspace folder. In the notebook's **Drive and file paths** cell, change `DRIVE_BASE` once if you use a different workspace folder; later cells reuse the paths derived from it. Keep the dataset outside Git.
+
+## Trained model weights
+
+The trained checkpoints and run outputs are available in the [shared Google Drive model_runs folder](https://drive.google.com/drive/folders/1q_PYgskSo0zms51jhwnSlv0Z7N4ToLOX?usp=sharing). For inference, use the `best` checkpoint for each model:
+
+- Faster R-CNN: `faster_rcnn/best.pth`
+- RetinaNet: `retinanet/best.pth`
+- RT-DETR-L: `rtdetr/weights/best.pt`
+
+The matching `last` checkpoints are also in the folder for continuing training. These files are hosted in Drive because the Faster R-CNN and RetinaNet checkpoints exceed GitHub's regular 100 MiB per-file limit. The repository contains the report, metrics, loss curves, and validation examples, so the weights are only needed to run the trained models again.
 
 ## Run the experiment in Colab
 

@@ -21,16 +21,17 @@ Model weights and the ACID images are not stored in Git. The notebook reads the 
 
 ## Dataset
 
-The assignment dataset is the ACID three-class subset (Excavator, Dozer, and Dump Truck). Download it from the [ACID Google Drive link](https://drive.google.com/uc?id=1Qg_X5FygUMBRTcVFPb0s1fQP-20f8n8O). If Google Drive asks for access, sign in with an account that has permission to view the file. Keep the dataset outside Git; the notebook expects it under `MyDrive/Assignment 2 CV5570/ACID_3classes/3classes/` after extraction.
+The assignment dataset is the ACID three-class subset (Excavator, Dozer, and Dump Truck). Download it from the [ACID Google Drive link](https://drive.google.com/uc?id=1Qg_X5FygUMBRTcVFPb0s1fQP-20f8n8O) and extract it in your Google Drive. The notebook expects `3classes.json` and its images in `ACID_3classes/3classes/` beneath the Drive workspace folder. In the notebook's **Drive and file paths** cell, change `DRIVE_BASE` once if you use a different workspace folder; later cells reuse the paths derived from it. Keep the dataset outside Git.
 
 ## Run the experiment in Colab
 
-1. Put the repository ZIP and the ACID three-class dataset under `MyDrive/Assignment 2 CV5570/`.
-2. Open `notebooks/assignment2_colab.ipynb`, select a GPU runtime, and run the setup and dataset-analysis cells.
-3. Run the Faster R-CNN, RetinaNet, and RT-DETR cells. Each model saves its own results under `assignment2_run/outputs/model_runs/`.
-4. If the Faster R-CNN validation example board is missing, run only its checkpoint-recovery cell. It uses `best.pth` to recreate the examples and leaves the saved metrics unchanged. Do not rerun training if the model results already exist.
+1. Download and extract the ACID dataset into the Drive workspace folder, using the folder structure described above.
+2. Open the [notebook in Google Colab](https://colab.research.google.com/github/wick1-22/Assignment-2-CV5570/blob/main/notebooks/assignment2_colab.ipynb) and connect to a runtime.
+3. In the **Drive and file paths** cell, change `DRIVE_BASE` only if your Drive workspace folder has a different location or name. The notebook clones this repository automatically; you do not need to download or upload a repository ZIP.
+4. Run the setup and dataset-analysis cells. To reproduce the experiments, run each model's training cell. Results are saved under `assignment2_run/outputs/model_runs/` in Drive. Skip training cells when using the saved completed results.
+5. If Faster R-CNN's example board is missing but its checkpoint exists, run only the checkpoint-recovery cell; it recreates the examples without retraining.
 
-The PDF report is generated from saved outputs in the repository, not in Colab.
+The repository ZIP available from GitHub's **Code → Download ZIP** contains a snapshot of the tracked repository files. It does not include the dataset or model weights. This Colab workflow clones the repository directly, so no repository ZIP is needed. The final PDF report is included in `reports/`.
 
 The split is seeded (42) and uses 70% training, 20% validation, and 10% test images. Validation metrics are used for the model comparison; the test split is held out.
 

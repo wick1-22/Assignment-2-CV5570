@@ -8,13 +8,13 @@ This repository contains a three-class object-detection experiment using the ACI
 src/
   data_tools.py       Dataset checks, split creation, and plots
   train_models.py     Training, validation metrics, examples, and comparison plot
-  build_report.py     PDF and Markdown report builder
+  build_report.py     PDF report builder
 notebooks/
   assignment2_colab.ipynb   Colab workflow
 outputs/
   dataset_analysis/   Dataset summary, split files, and figures
   model_runs/         Per-model metrics and training outputs
-reports/               Assignment report and editable Markdown source
+reports/               Assignment report
 ```
 
 Model weights and the ACID images are not stored in Git. The notebook reads the dataset from Google Drive and saves training outputs there.
@@ -30,7 +30,7 @@ The assignment dataset is the ACID three-class subset (Excavator, Dozer, and Dum
 3. Run the Faster R-CNN, RetinaNet, and RT-DETR cells. Each model saves its own results under `assignment2_run/outputs/model_runs/`.
 4. If the Faster R-CNN validation example board is missing, run only its checkpoint-recovery cell. It uses `best.pth` to recreate the examples and leaves the saved metrics unchanged. Do not rerun training if the model results already exist.
 
-The PDF and Markdown report are generated from saved outputs in the repository, not in Colab.
+The PDF report is generated from saved outputs in the repository, not in Colab.
 
 The split is seeded (42) and uses 70% training, 20% validation, and 10% test images. Validation metrics are used for the model comparison; the test split is held out.
 

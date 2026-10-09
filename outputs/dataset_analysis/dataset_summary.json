@@ -1,0 +1,62 @@
+{
+  "source_annotation": "3classes.json",
+  "image_root": "ACID three-class image directory",
+  "image_count": 3929,
+  "instance_count": 7614,
+  "annotation_format": "COCO JSON; bounding boxes stored as [x, y, width, height] pixels",
+  "class_instances": {
+    "dozer": 1123,
+    "dump_truck": 3701,
+    "excavator": 2790
+  },
+  "split_seed": 42,
+  "split_proportions": {
+    "train": 0.7,
+    "val": 0.2,
+    "test": 0.1
+  },
+  "splits": {
+    "train": {
+      "images": 2750,
+      "annotations": 5351,
+      "class_instances": {
+        "dozer": 776,
+        "dump_truck": 2614,
+        "excavator": 1961
+      }
+    },
+    "val": {
+      "images": 785,
+      "annotations": 1499,
+      "class_instances": {
+        "dozer": 243,
+        "dump_truck": 715,
+        "excavator": 541
+      }
+    },
+    "test": {
+      "images": 394,
+      "annotations": 764,
+      "class_instances": {
+        "dozer": 104,
+        "dump_truck": 372,
+        "excavator": 288
+      }
+    }
+  },
+  "bbox_area_fraction": {
+    "min": 0.00021158854166666667,
+    "median": 0.088134765625,
+    "max": 0.9901171875
+  },
+  "bbox_aspect_ratio": {
+    "min": 0.1639784946236559,
+    "median": 1.4489795918367347,
+    "max": 20.9
+  },
+  "class_id_to_name": {
+    "1": "dozer",
+    "2": "dump_truck",
+    "3": "excavator"
+  }
+}

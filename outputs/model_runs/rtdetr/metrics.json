@@ -1,0 +1,37 @@
+{
+  "model": "rtdetr",
+  "family": "transformer",
+  "pretrained_checkpoint": "rtdetr-l.pt",
+  "best_checkpoint": "weights/best.pt",
+  "training_seconds": 4338.812,
+  "parameters": 32812241,
+  "fps": 13.046741302173066,
+  "inference_ms_per_image": 76.64749203185626,
+  "epochs": 10,
+  "batch_size": 2,
+  "image_size": 640,
+  "device": "cuda:0",
+  "mAP50": 0.9386871772116755,
+  "mAP50_95": 0.7496965518725837,
+  "per_class": {
+    "dozer": {
+      "AP50": 0.9482404222014045,
+      "AP50_95": 0.7538380020793849,
+      "ground_truth_instances": 243
+    },
+    "dump_truck": {
+      "AP50": 0.9098237459573728,
+      "AP50_95": 0.6773937952222242,
+      "ground_truth_instances": 715
+    },
+    "excavator": {
+      "AP50": 0.9579973634762493,
+      "AP50_95": 0.8178578583161418,
+      "ground_truth_instances": 541
+    }
+  },
+  "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001429,
+  "gpu": "NVIDIA Tesla T4"
+}

@@ -1,0 +1,191 @@
+{
+  "dataset": {
+    "source_annotation": "3classes.json",
+    "image_root": "ACID three-class image directory",
+    "image_count": 3929,
+    "instance_count": 7614,
+    "annotation_format": "COCO JSON; bounding boxes stored as [x, y, width, height] pixels",
+    "class_instances": {
+      "dozer": 1123,
+      "dump_truck": 3701,
+      "excavator": 2790
+    },
+    "split_seed": 42,
+    "split_proportions": {
+      "train": 0.7,
+      "val": 0.2,
+      "test": 0.1
+    },
+    "splits": {
+      "train": {
+        "images": 2750,
+        "annotations": 5351,
+        "class_instances": {
+          "dozer": 776,
+          "dump_truck": 2614,
+          "excavator": 1961
+        }
+      },
+      "val": {
+        "images": 785,
+        "annotations": 1499,
+        "class_instances": {
+          "dozer": 243,
+          "dump_truck": 715,
+          "excavator": 541
+        }
+      },
+      "test": {
+        "images": 394,
+        "annotations": 764,
+        "class_instances": {
+          "dozer": 104,
+          "dump_truck": 372,
+          "excavator": 288
+        }
+      }
+    },
+    "bbox_area_fraction": {
+      "min": 0.00021158854166666667,
+      "median": 0.088134765625,
+      "max": 0.9901171875
+    },
+    "bbox_aspect_ratio": {
+      "min": 0.1639784946236559,
+      "median": 1.4489795918367347,
+      "max": 20.9
+    },
+    "class_id_to_name": {
+      "1": "dozer",
+      "2": "dump_truck",
+      "3": "excavator"
+    }
+  },
+  "models": [
+    {
+      "model": "faster_rcnn",
+      "family": "two-stage",
+      "pretrained_checkpoint": "Faster R-CNN ResNet50-FPN v2 COCO weights",
+      "optimizer": "SGD",
+      "learning_rate": 0.005,
+      "weight_decay": 0.0005,
+      "momentum": 0.9,
+      "training_seconds": 8320.401583944,
+      "parameters": 43266403,
+      "fps": 9.59908408524276,
+      "inference_ms_per_image": 104.17660592611739,
+      "epochs": 10,
+      "batch_size": 2,
+      "image_size": 640,
+      "device": "cuda",
+      "mAP50": 0.9288584236889004,
+      "mAP50_95": 0.6789613692825153,
+      "per_class": {
+        "dozer": {
+          "AP50": 0.9369014385699644,
+          "AP50_95": 0.6908165233975492,
+          "ground_truth_instances": 243
+        },
+        "dump_truck": {
+          "AP50": 0.8961905297578929,
+          "AP50_95": 0.6173826837553802,
+          "ground_truth_instances": 715
+        },
+        "excavator": {
+          "AP50": 0.9534833027388439,
+          "AP50_95": 0.7286849006946164,
+          "ground_truth_instances": 541
+        }
+      },
+      "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+      "gpu": "NVIDIA Tesla T4"
+    },
+    {
+      "model": "retinanet",
+      "family": "one-stage",
+      "pretrained_checkpoint": "RetinaNet ResNet50-FPN v2 COCO weights",
+      "optimizer": "SGD",
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0005,
+      "momentum": 0.9,
+      "training_seconds": 4759.726010826,
+      "parameters": 36373375,
+      "fps": 16.79281731629147,
+      "inference_ms_per_image": 59.54926925989095,
+      "epochs": 10,
+      "batch_size": 2,
+      "image_size": 640,
+      "device": "cuda",
+      "mAP50": 0.8964244959755684,
+      "mAP50_95": 0.6254356436055607,
+      "per_class": {
+        "dozer": {
+          "AP50": 0.9391639680786346,
+          "AP50_95": 0.6739983592153831,
+          "ground_truth_instances": 243
+        },
+        "dump_truck": {
+          "AP50": 0.8170941454733608,
+          "AP50_95": 0.5487947338704521,
+          "ground_truth_instances": 715
+        },
+        "excavator": {
+          "AP50": 0.93301537437471,
+          "AP50_95": 0.6535138377308469,
+          "ground_truth_instances": 541
+        }
+      },
+      "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+      "gpu": "NVIDIA Tesla T4"
+    },
+    {
+      "model": "rtdetr",
+      "family": "transformer",
+      "pretrained_checkpoint": "rtdetr-l.pt",
+      "best_checkpoint": "weights/best.pt",
+      "training_seconds": 4338.812,
+      "parameters": 32812241,
+      "fps": 13.046741302173066,
+      "inference_ms_per_image": 76.64749203185626,
+      "epochs": 10,
+      "batch_size": 2,
+      "image_size": 640,
+      "device": "cuda:0",
+      "mAP50": 0.9386871772116755,
+      "mAP50_95": 0.7496965518725837,
+      "per_class": {
+        "dozer": {
+          "AP50": 0.9482404222014045,
+          "AP50_95": 0.7538380020793849,
+          "ground_truth_instances": 243
+        },
+        "dump_truck": {
+          "AP50": 0.9098237459573728,
+          "AP50_95": 0.6773937952222242,
+          "ground_truth_instances": 715
+        },
+        "excavator": {
+          "AP50": 0.9579973634762493,
+          "AP50_95": 0.8178578583161418,
+          "ground_truth_instances": 541
+        }
+      },
+      "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+      "optimizer": "AdamW",
+      "learning_rate": 0.001429,
+      "gpu": "NVIDIA Tesla T4"
+    }
+  ],
+  "shared_setup": {
+    "split_seed": 42,
+    "epochs": 10,
+    "batch_size": 2,
+    "image_size": 640,
+    "augmentation": "disabled for all models",
+    "gpu": "NVIDIA Tesla T4",
+    "python": "Google Colab Python 3.13 (reported by runtime)",
+    "torch": "version not saved in run artifacts",
+    "torchvision": "version not saved in run artifacts",
+    "ultralytics": "version not saved in run artifacts"
+  }
+}

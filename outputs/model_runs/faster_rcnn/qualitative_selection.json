@@ -1,0 +1,11 @@
+{
+  "rule": "Success examples have at least one correct match, at least 50% ground-truth recall, and at least 50% precision at IoU >= 0.5 with a 0.25 display score threshold. Failure examples do not meet this rule.",
+  "selected": [
+    [{"name": "00002.jpg", "tp": 2, "fp": 2, "fn": 0}, "Success"],
+    [{"name": "00018.jpg", "tp": 4, "fp": 2, "fn": 1}, "Success"],
+    [{"name": "00028.jpg", "tp": 1, "fp": 1, "fn": 0}, "Success"],
+    [{"name": "04460.jpg", "tp": 6, "fp": 9, "fn": 2}, "Failure"],
+    [{"name": "05513.jpg", "tp": 6, "fp": 7, "fn": 1}, "Failure"],
+    [{"name": "09385.jpg", "tp": 5, "fp": 6, "fn": 1}, "Failure"]
+  ]
+}

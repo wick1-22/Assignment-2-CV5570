@@ -1,0 +1,38 @@
+{
+  "model": "retinanet",
+  "family": "one-stage",
+  "pretrained_checkpoint": "RetinaNet ResNet50-FPN v2 COCO weights",
+  "optimizer": "SGD",
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0005,
+  "momentum": 0.9,
+  "training_seconds": 4759.726010826,
+  "parameters": 36373375,
+  "fps": 16.79281731629147,
+  "inference_ms_per_image": 59.54926925989095,
+  "epochs": 10,
+  "batch_size": 2,
+  "image_size": 640,
+  "device": "cuda",
+  "mAP50": 0.8964244959755684,
+  "mAP50_95": 0.6254356436055607,
+  "per_class": {
+    "dozer": {
+      "AP50": 0.9391639680786346,
+      "AP50_95": 0.6739983592153831,
+      "ground_truth_instances": 243
+    },
+    "dump_truck": {
+      "AP50": 0.8170941454733608,
+      "AP50_95": 0.5487947338704521,
+      "ground_truth_instances": 715
+    },
+    "excavator": {
+      "AP50": 0.93301537437471,
+      "AP50_95": 0.6535138377308469,
+      "ground_truth_instances": 541
+    }
+  },
+  "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+  "gpu": "NVIDIA Tesla T4"
+}

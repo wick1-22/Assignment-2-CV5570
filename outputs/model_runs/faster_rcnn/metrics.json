@@ -1,0 +1,38 @@
+{
+  "model": "faster_rcnn",
+  "family": "two-stage",
+  "pretrained_checkpoint": "Faster R-CNN ResNet50-FPN v2 COCO weights",
+  "optimizer": "SGD",
+  "learning_rate": 0.005,
+  "weight_decay": 0.0005,
+  "momentum": 0.9,
+  "training_seconds": 8320.401583944,
+  "parameters": 43266403,
+  "fps": 9.59908408524276,
+  "inference_ms_per_image": 104.17660592611739,
+  "epochs": 10,
+  "batch_size": 2,
+  "image_size": 640,
+  "device": "cuda",
+  "mAP50": 0.9288584236889004,
+  "mAP50_95": 0.6789613692825153,
+  "per_class": {
+    "dozer": {
+      "AP50": 0.9369014385699644,
+      "AP50_95": 0.6908165233975492,
+      "ground_truth_instances": 243
+    },
+    "dump_truck": {
+      "AP50": 0.8961905297578929,
+      "AP50_95": 0.6173826837553802,
+      "ground_truth_instances": 715
+    },
+    "excavator": {
+      "AP50": 0.9534833027388439,
+      "AP50_95": 0.7286849006946164,
+      "ground_truth_instances": 541
+    }
+  },
+  "metric_note": "Class-wise AP uses 101-point interpolated precision-recall; mean over IoU 0.50:0.95 in 0.05 steps.",
+  "gpu": "NVIDIA Tesla T4"
+}

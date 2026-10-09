@@ -1,0 +1,12 @@
+{
+  "pretrained_checkpoint": "rtdetr-l.pt",
+  "epochs": 10,
+  "batch_size": 2,
+  "image_size": 640,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001429,
+  "augmentation": "disabled",
+  "device": "cuda:0",
+  "training_seconds": 4338.812,
+  "gpu": "NVIDIA Tesla T4"
+}

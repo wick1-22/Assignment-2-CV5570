@@ -1,0 +1,14 @@
+{
+  "pretrained": "TorchVision COCO ResNet50-FPN v2",
+  "epochs": 10,
+  "batch_size": 2,
+  "image_size": 640,
+  "optimizer": "SGD",
+  "learning_rate": 0.0005,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "augmentation": "none",
+  "device": "cuda",
+  "training_seconds": 4759.726010826,
+  "gpu": "NVIDIA Tesla T4"
+}

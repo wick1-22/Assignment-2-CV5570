@@ -1,0 +1,9 @@
+# Colab supplies a matching PyTorch/TorchVision pair in its GPU runtime.
+# For local analysis and report generation:
+Pillow>=10.0
+reportlab>=4.0
+PyYAML>=6.0
+
+# For local GPU training, install PyTorch and TorchVision using the command
+# recommended for your CUDA version, then install:
+ultralytics>=8.3

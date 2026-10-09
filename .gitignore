@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Keep the ACID dataset and model checkpoints outside standard Git.
+ACID_3classes/
+*.pt
+*.pth
+
+# Colab runtime configuration and temporary bundles.
+outputs/model_runs/**/weights/
+outputs/model_runs/**/args.yaml
+*.zip
